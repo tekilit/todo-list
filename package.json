@@ -1,9 +1,10 @@
 {
   "name": "todo-list-1",
   "version": "1.0.0",
-  "description": "Dada la lista de `categories` y `todos` que tenemos, vamos a crear un servidor que cumpla los siguientes requisitos para terminar nuestra Todo List:",
+  "description": "Todo List Server",
   "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
     "dev": "nodemon ."
   },
   "repository": {
@@ -11,7 +12,7 @@
     "url": "git+https://github.com/tekilit/todo-list.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "tekilit",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tekilit/todo-list/issues"
