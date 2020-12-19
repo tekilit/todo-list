@@ -12,10 +12,18 @@ const CATEGORIES_DB = "src/db/categories.json"
 router.get("/", async (req, res) => {
     try { 
     const todolist = await fs.readFileSync(TODOS_DB);
-    const categoriesList = await fs.readFileSync(CATEGORIES_DB)
+    const categoriesList = await fs.readFileSync(CATEGORIES_DB);
     const todosJson = JSON.parse(todolist);
     const categoriesJson = JSON.parse(categoriesList);
-    const showTodos = todosJson.slice(0,);
+    const showCategory = todosJson.map((todo)=>{
+      const categoryData = categoriesJson.filter((category)=>{
+        return category.id === todo.category;
+      });
+      todo.category =categoryData[0];
+      return todo;
+    })
+
+    const showTodos = todosJson.slice(0,5);
     console.log(showTodos)
 
     res.status(200).json({
